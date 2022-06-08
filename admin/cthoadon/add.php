@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <?php require_once(__DIR__ . '/../layout/header.php'); ?>
+    <title>Admin</title>
+
+</head>
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    
+    $data =
+        [
+            "MaHD" => $_POST['MaHD'] ? $_POST['MaHD'] : '',
+            "Mahh" => $_POST['Mahh'] ? $_POST['Mahh'] : '',
+            "SoLuong" => $_POST['SoLuong'] ? $_POST['SoLuong'] : '',
+        ];
+
+    $insert = $db->insert('khachhang', $data);
+    if ($insert > 0) {
+        $_SESSION['error'] = "Thêm thành công";
+        header('Location: ./index.php');
+    } else
+        $_SESSION['error'] = "không thành công";
+}
+$sql="select * from quanao";
+$quanao=$db->fetchAll($sql);
+?>
+
+<body>
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+            </svg>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+        <?php require_once(__DIR__ . '/../layout/nav_header.php') ?>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+        <?php require_once(__DIR__ . '/../layout/side_bar.php') ?>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+
+            <div class="container-fluid mt-3">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Thêm Khách Hàng Mới</h4>
+                            <div class="basic-form">
+                                <form method="POST" action="" enctype="multipart/form-data">
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label>Mã Hóa Đơn</label>
+                                            <input type="text" required name="MaHD" class="form-control" placeholder="Nhập Mã Hóa Đơn">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <select id="inputState" name="Mahh" required class="form-control">
+                                            <?php foreach ($quanao as $item) : ?>
+                                                <?php  ?>
+                                                <option selected value="<?php echo $item['Mahh'] ?>"><?php echo $item['Tenhh'] ?></option>
+                                            <?php endforeach ?>
+                                        </select>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label>Số Lượng</label>
+                                            <input type="number" required name="SoLuong" class="form-control" placeholder="Nhập Số Điện Thoại">
+                                        </div>
+                                    </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-dark">Thêm Mới Chi Tiết Hóa Đơn</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- #/ container -->
+    </div>
+    <!--**********************************
+            Content body end
+        ***********************************-->
+
+
+    <!--**********************************
+            Footer start
+        ***********************************-->
+    <!-- <div class="footer">
+            <div class="copyright">
+                <p>Copyright &copy; Designed & Developed by <a href="https://themeforest.net/user/quixlab">Quixlab</a> 2018</p>
+            </div>
+        </div> -->
+    <!--**********************************
+            Footer end
+        ***********************************-->
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <?php require_once(__DIR__ . '/../layout/script.php') ?>
+
+</body>
+
+</html>
