@@ -116,7 +116,7 @@
             <div class="description">
                 <div class="grid">
                     <div class="description__form">
-                        <h2 class="description__form-title">Mô tả sản phẩm</h2>
+                        <h2 class="description__form-title">Mô tả sản phẩmgdhjkjhgdgjkjhgfsglkj</h2>
                         <div class="description__form-desc">
                             <p class="description__form-text">
                                 <?php echo $detail['Mota'] ?>
