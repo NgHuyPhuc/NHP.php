@@ -50,15 +50,15 @@
                                 <h3 class="category-heading">Mức giá</h3>
                                 <div class="category-list border-bottom">
                                     <input type="checkbox" id="price-min" class="category-input">
-                                    <label for="price-min"> Dưới 100.000đ</label><br>
+                                    <label for="price-min"> Dưới 10.000đ</label><br>
                                     <input type="checkbox" id="min-second" class="category-input">
-                                    <label for="min-second"> 100.000đ-200.000đ</label><br>
+                                    <label for="min-second"> 10.000đ-200.000đ</label><br>
                                     <input type="checkbox" id="min-third" class="category-input">
-                                    <label for="min-third"> 200.000đ-300.000đ</label><br>
+                                    <label for="min-third"> 20.000đ-300.000đ</label><br>
                                     <input type="checkbox" id="price-medium" class="category-input">
-                                    <label for="price-medium"> 300.000đ-500.000đ</label><br>
+                                    <label for="price-medium"> 30.000đ-500.000đ</label><br>
                                     <input type="checkbox" id="nearest" class="category-input">
-                                    <label for="nearest"> 500.000đ-1.000.000đ</label><br>
+                                    <label for="nearest"> 50.000đ-1.000.000đ</label><br>
                                     <input type="checkbox" id="max" class="category-input">
                                     <label for="max"> Trên 1.000.000đ</label><br>
                                 </div>

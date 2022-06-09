@@ -3,6 +3,7 @@
 <head>
 <?php require_once(__DIR__ . '/layout/header.php')?>
     <title>Sale</title>
+    
 </head>
 <body>
     <div class="app">

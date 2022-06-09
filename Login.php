@@ -5,6 +5,7 @@
     <?php require_once(__DIR__ . '/layout/header.php'); ?>
 </head>
 <?php
+
 if (isset($_SESSION['khach'])) {
     //header("location:./index.php");
 } else {

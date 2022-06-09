@@ -19,7 +19,9 @@
             $str_sql = implode(",", $arr_id);
             $sql = "SELECT * FROM quanao WHERE Mahh IN($str_sql)";
             $cart = $db->fetchAll($sql);
+            
         }
+
     }
     ?>
 

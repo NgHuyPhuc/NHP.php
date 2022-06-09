@@ -3,6 +3,7 @@
 
 <head>
     <?php require_once(__DIR__ . '/layout/header.php'); ?>
+    
 </head>
 <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {

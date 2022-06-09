@@ -11,6 +11,7 @@ if (isset($_SESSION['khach'])) {
     $sql = "SELECT * FROM acckhach WHERE ID=$id ";
     $user = $db->fetchOne($sql);
 }
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // upload file
     $check = false;
@@ -30,6 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (empty($errors) == true) {
             move_uploaded_file($file_tmp, '../../public/img/user/' . $file_name);
             $check = true;
+            
         }
     }
     //

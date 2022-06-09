@@ -6,6 +6,7 @@
 </head>
 
 <body>
+    
     <?php
     $sql = "select `quanao`.*, `loaisp`.`ID`,`loaisp`.`TenLoai`
     from `quanao` , `loaisp` 
